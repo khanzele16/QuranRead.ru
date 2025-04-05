@@ -1,0 +1,27 @@
+{
+  "name": "tauba",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@grammyjs/types": "^3.19.0",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "grammy": "^1.35.1",
+    "mongoose": "^8.13.2",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.14",
+    "express": "^5.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
