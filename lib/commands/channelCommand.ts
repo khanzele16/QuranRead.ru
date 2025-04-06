@@ -1,6 +1,5 @@
 import { Context, InlineKeyboard } from "grammy";
 import deleteMessageFromCallback from "../../shared/lib/deleteMessageFromCallback";
-import { returnToStartKeyboard } from "../../shared/lib/returnToStart";
 
 const inlineKeyboard = new InlineKeyboard()
   .url("Подписаться на канал", "https://t.me/khanzele_dev")

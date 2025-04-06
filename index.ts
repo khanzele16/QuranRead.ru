@@ -4,7 +4,8 @@ import { commands } from "./shared/config/commands";
 import { connectDB } from "./server";
 import getAyatFromMessage from "./lib/getAyatFromMessage";
 import getSurahInfo from "./lib/getSurahInfo";
-import { register } from "./server/controllers/authController";
+import { changeAudioCallbackQuery } from "./lib/commands/settingsCommand";
+import { getAyatDaily } from "./lib/getAyatDaily";
 
 dotenv.config();
 connectDB();
@@ -17,6 +18,8 @@ commands.map((command) => {
   bot.command(command.command, command.action);
   bot.callbackQuery(command.command, command.action);
 });
+
+bot.callbackQuery("change_audio", changeAudioCallbackQuery);
 
 bot.on("message:text", async (ctx: Context) => {
   const message = ctx.message?.text;
@@ -35,5 +38,7 @@ bot.on("message:text", async (ctx: Context) => {
     }
   }
 });
+
+// getAyatDaily(bot)
 
 bot.start();

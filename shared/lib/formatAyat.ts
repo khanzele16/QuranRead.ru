@@ -41,16 +41,19 @@ async function formatAyat(
       if (!audioUrl) {
         throw new Error("audioUrl is required when format is 'audio'");
       }
-      const caption = `<blockquote>${arabicText}\n\n${translationText}\n\n<i>${ayatSurah}</i></blockquote>\n<b><a href='https://t.me/RuQuranRead_bot'>QuranRead.ru</a> — ваш спутник в изучении Корана!</b>`
+      const caption = `<blockquote>${arabicText}\n\n${translationText}\n\n<i>${ayatSurah}</i></blockquote>\n<b><a href='https://t.me/RuQuranRead_bot'>QuranRead.ru</a> — ваш спутник в изучении Корана!</b>`;
       if (caption.length >= 1024) {
-        await ctx.replyWithAudio(audioUrl)
-        ctx.reply(caption, { parse_mode: "HTML", link_preview_options: { is_disabled: true } });
+        await ctx.replyWithAudio(audioUrl);
+        ctx.reply(caption, {
+          parse_mode: "HTML",
+          link_preview_options: { is_disabled: true },
+        });
       } else {
-      await ctx.replyWithAudio(audioUrl, {
-        caption: caption,
-        parse_mode: "HTML",
-      });
-    }
+        await ctx.replyWithAudio(audioUrl, {
+          caption: caption,
+          parse_mode: "HTML",
+        });
+      }
       break;
   }
 }
